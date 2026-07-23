@@ -1,0 +1,397 @@
+:root {
+  color: #f6f3ec;
+  background: #111111;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(25, 203, 211, 0.22), transparent 28rem),
+    radial-gradient(circle at 86% 14%, rgba(212, 161, 59, 0.2), transparent 24rem),
+    linear-gradient(135deg, #101010 0%, #1f1b18 46%, #0f1a1b 100%);
+}
+
+button {
+  border: 0;
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 48px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+}
+
+.brand,
+.location,
+.movie-meta,
+.booking-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.brand.compact {
+  font-size: 1rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #f1c85f;
+  color: #111111;
+}
+
+.location {
+  color: #d7d1c8;
+  font-size: 0.95rem;
+}
+
+.home-intro {
+  padding: 52px 0 30px;
+  max-width: 760px;
+}
+
+.home-intro p,
+.pill,
+.summary span {
+  margin: 0;
+  color: #f1c85f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.home-intro h1,
+.booking-panel h1 {
+  margin: 10px 0 0;
+  color: #ffffff;
+  line-height: 1.02;
+}
+
+.home-intro h1 {
+  max-width: 720px;
+  font-size: clamp(2.2rem, 7vw, 5.4rem);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.movie-card {
+  display: grid;
+  grid-template-columns: minmax(170px, 38%) 1fr;
+  overflow: hidden;
+  min-height: 410px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
+}
+
+.movie-card img,
+.booking-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+}
+
+.pill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 10px;
+  border: 1px solid rgba(241, 200, 95, 0.4);
+  border-radius: 999px;
+  background: rgba(241, 200, 95, 0.12);
+}
+
+.movie-card h2,
+.booking-section h2 {
+  margin: 14px 0 8px;
+  color: #ffffff;
+}
+
+.movie-card h2 {
+  font-size: 1.8rem;
+}
+
+.movie-card p,
+.movie-description {
+  color: #d7d1c8;
+  line-height: 1.6;
+}
+
+.movie-meta {
+  flex-wrap: wrap;
+  color: #c7beb4;
+  font-size: 0.92rem;
+}
+
+.primary-button,
+.ghost-button,
+.time-button,
+.counter button,
+.seat {
+  min-height: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 0 18px;
+  background: #f1c85f;
+  color: #15120e;
+  font-weight: 900;
+}
+
+.primary-button:hover:not(:disabled),
+.ghost-button:hover,
+.time-button:hover,
+.counter button:hover,
+.seat:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ghost-button {
+  padding: 0 15px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 390px) 1fr;
+  gap: 28px;
+  align-items: start;
+  padding-top: 34px;
+}
+
+.booking-poster {
+  overflow: hidden;
+  height: 620px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.booking-panel {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(16, 16, 16, 0.74);
+}
+
+.booking-panel h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.movie-description {
+  max-width: 680px;
+  margin: 14px 0 28px;
+}
+
+.booking-section {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.booking-section h2 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+}
+
+.booking-section.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.showtime-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.time-button,
+.counter button,
+.seat {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.time-button.active,
+.seat.selected {
+  border-color: #f1c85f;
+  background: #f1c85f;
+  color: #15120e;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: 44px 52px 44px;
+  align-items: center;
+  text-align: center;
+}
+
+.counter strong {
+  color: #ffffff;
+  font-size: 1.35rem;
+}
+
+.screen {
+  display: grid;
+  place-items: center;
+  height: 28px;
+  margin-bottom: 18px;
+  border-radius: 0 0 40px 40px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+  color: #d7d1c8;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(48px, 1fr));
+  gap: 10px;
+}
+
+.seat {
+  aspect-ratio: 1.35;
+  min-height: 50px;
+}
+
+.seat.reserved {
+  cursor: not-allowed;
+  opacity: 0.36;
+  text-decoration: line-through;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: 1fr auto minmax(190px, 240px);
+  gap: 18px;
+  align-items: center;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.summary strong {
+  display: block;
+  margin-top: 4px;
+  color: #ffffff;
+}
+
+.total {
+  min-width: 90px;
+}
+
+@media (max-width: 860px) {
+  .movie-grid,
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card {
+    grid-template-columns: 180px 1fr;
+    min-height: 340px;
+  }
+
+  .booking-poster {
+    height: 480px;
+  }
+
+  .summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    width: min(100% - 24px, 1120px);
+    padding-top: 16px;
+  }
+
+  .topbar,
+  .booking-section.split {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-intro {
+    padding-top: 34px;
+  }
+
+  .movie-card {
+    grid-template-columns: 1fr;
+  }
+
+  .movie-card img {
+    height: 380px;
+  }
+
+  .showtime-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-panel {
+    padding: 20px;
+  }
+}
